@@ -1,0 +1,1005 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<meta name="description" content="Karim Shehad AI Art — كريم شهاد، صانع أفلام بالذكاء الاصطناعي. أفلام سينمائية، فيديوهات موسيقية، وأفلام تكريم، ومتحف ثلاثي الأبعاد يضم 182 عملًا." />
+<link rel="icon" href="data:," />
+<title>Karim Shehad AI Art — كريم شهاد | THE AI FILMMAKER</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#ffffff;
+    --bg-soft:#f4f4f1;
+    --bg-card:#f6f6f3;
+    --ink:#0b0b0c;
+    --ink-2:#3f3f46;
+    --muted:#71717a;
+    --line:#e7e7e2;
+    --dark:#0b0b0c;
+    --dark-card:#17171a;
+    --dark-line:#26262b;
+    --on-dark:#f4f4f2;
+    --on-dark-muted:#a1a1aa;
+    --gold:#c19a2e;
+    --gold-soft:#f3e9cf;
+    --blue:#1e5eff;
+    --blue-soft:#e3ebff;
+    --radius:22px;
+    --max:1180px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#0e0e10;
+      --bg-soft:#131315;
+      --bg-card:#17171a;
+      --ink:#f4f4f2;
+      --ink-2:#d4d4d8;
+      --muted:#a1a1aa;
+      --line:#26262b;
+      --gold-soft:#2b2410;
+      --blue-soft:#16224d;
+    }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{animation:none!important;transition:none!important}
+  }
+  body{
+    margin:0;
+    font-family:"Cairo", system-ui, -apple-system, "Segoe UI", Tahoma, sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.75;
+    padding-bottom:104px;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  .en{font-family:"Manrope","Cairo",sans-serif}
+  a{color:inherit}
+  img,svg{display:block}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+  ::selection{background:var(--ink);color:var(--bg)}
+
+  /* ---------- Buttons ---------- */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    min-height:52px;padding:12px 26px;border-radius:999px;
+    font-family:inherit;font-size:16px;font-weight:800;line-height:1.2;
+    text-decoration:none;border:1.5px solid transparent;cursor:pointer;
+    transition:transform .18s ease, background .18s ease, color .18s ease, border-color .18s ease;
+    white-space:nowrap;
+  }
+  .btn:active{transform:scale(.97)}
+  .btn-dark{background:var(--ink);color:var(--bg)}
+  .btn-dark:hover{background:#26262b}
+  @media (prefers-color-scheme: dark){ .btn-dark:hover{background:#e4e4e0;color:#0b0b0c} }
+  .btn-ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
+  .btn-ghost:hover{background:var(--bg-soft)}
+  .btn-light{background:#fff;color:#0b0b0c}
+  .btn-light:hover{background:#e9e9e6}
+  .btn-outline-light{background:transparent;color:#fff;border-color:rgba(255,255,255,.45)}
+  .btn-outline-light:hover{border-color:#fff}
+  .btn .arr{
+    width:26px;height:26px;border-radius:50%;flex:none;
+    display:inline-flex;align-items:center;justify-content:center;
+    background:currentColor;
+  }
+  .btn .arr svg{width:13px;height:13px}
+  .btn-dark .arr svg{color:var(--ink)}
+  @media (prefers-color-scheme: dark){ .btn-dark .arr svg{color:#f4f4f2} }
+  .btn-light .arr{background:#0b0b0c}
+  .btn-light .arr svg{color:#fff}
+
+  /* ---------- Top nav ---------- */
+  header{
+    position:sticky;top:0;z-index:60;
+    background:color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex;align-items:center;gap:18px;min-height:72px}
+  .logo{text-decoration:none;line-height:1.15;flex:none}
+  .logo b{display:block;font-size:19px;font-weight:900;letter-spacing:-.01em}
+  .logo span{display:block;font-size:10.5px;font-weight:700;letter-spacing:.34em;color:var(--muted)}
+  .nav-links{display:flex;align-items:center;gap:4px;margin-inline-start:auto}
+  .nav-links a{
+    text-decoration:none;font-size:15px;font-weight:700;color:var(--ink-2);
+    padding:10px 12px;min-height:44px;display:inline-flex;align-items:center;border-radius:999px;
+  }
+  .nav-links a:hover{background:var(--bg-soft);color:var(--ink)}
+  .nav-cta{flex:none;min-height:48px;padding:10px 22px;font-size:15px}
+  .burger{
+    display:none;margin-inline-start:auto;flex:none;
+    width:48px;height:48px;border-radius:50%;border:1.5px solid var(--line);
+    background:var(--bg);color:var(--ink);cursor:pointer;
+    align-items:center;justify-content:center;
+  }
+  .burger svg{width:22px;height:22px}
+  .mobile-menu{display:none;border-top:1px solid var(--line);padding:10px 20px 18px}
+  .mobile-menu.open{display:block}
+  .mobile-menu a{
+    display:flex;align-items:center;min-height:48px;padding:8px 6px;
+    text-decoration:none;font-weight:800;font-size:17px;border-bottom:1px solid var(--line);
+  }
+  .mobile-menu a:last-of-type{border-bottom:none}
+  .mobile-menu .btn{width:100%;margin-top:12px}
+  @media (max-width:920px){
+    .nav-links,.nav .nav-cta{display:none}
+    .burger{display:inline-flex}
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{padding:64px 0 0;text-align:center}
+  .hero-badge{
+    display:inline-flex;align-items:center;gap:9px;
+    border:1.5px solid var(--line);border-radius:999px;
+    padding:8px 18px;font-size:14px;font-weight:700;color:var(--ink-2);
+    min-height:40px;
+  }
+  .hero-badge .dot{width:8px;height:8px;border-radius:50%;background:var(--gold);flex:none}
+  .hero h1{
+    margin:26px auto 0;max-width:900px;
+    font-size:clamp(40px,7.2vw,84px);font-weight:900;line-height:1.28;letter-spacing:-.01em;
+  }
+  .hero h1 .hl-gold{color:var(--gold)}
+  .hero h1 .hl-blue{color:var(--blue)}
+  .hero-sub{
+    margin:22px auto 0;max-width:640px;
+    font-size:clamp(17px,2.4vw,21px);color:var(--ink-2);font-weight:600;line-height:1.9;
+  }
+  .hero-sub b{color:var(--ink)}
+  .hero-ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:34px}
+  .hero-stats{
+    margin:56px auto 0;max-width:960px;
+    display:grid;grid-template-columns:repeat(3,1fr);
+    border-top:2px solid var(--ink);
+  }
+  .stat{padding:22px 12px 6px;text-align:center}
+  .stat + .stat{border-inline-start:1px solid var(--line)}
+  .stat b{display:block;font-size:clamp(30px,4.5vw,46px);font-weight:900;line-height:1.15}
+  .stat span{display:block;font-size:14px;color:var(--muted);font-weight:600;margin-top:4px}
+  @media (max-width:560px){
+    .hero-badge{font-size:12.5px;padding:8px 14px;text-align:center;line-height:1.5}
+    .hero{padding-top:44px}
+    .hero-stats{grid-template-columns:1fr 1fr 1fr}
+    .stat span{font-size:12px}
+    .hero-ctas .btn{width:100%}
+  }
+
+  /* Cinematic hero panel (typographic — no portrait) */
+  .stage{margin:54px auto 0;max-width:1020px;padding:0 20px}
+  .stage-card{
+    position:relative;border-radius:28px;overflow:hidden;
+    background:#08080a;color:#f5f2e9;text-align:start;
+    padding:clamp(26px,5vw,54px);
+    box-shadow:0 30px 60px -30px rgba(0,0,0,.45);
+  }
+  .stage-card::before{
+    content:"";position:absolute;inset:0;
+    background:
+      radial-gradient(560px 300px at 88% -10%, rgba(30,94,255,.38), transparent 62%),
+      radial-gradient(520px 320px at 4% 115%, rgba(193,154,46,.34), transparent 60%);
+    pointer-events:none;
+  }
+  .stage-top{position:relative;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .rec{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:800;letter-spacing:.22em}
+  .rec i{width:9px;height:9px;border-radius:50%;background:#e5484d;animation:blink 1.6s infinite}
+  @keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+  .stage-top .tag{
+    margin-inline-start:auto;font-size:12.5px;font-weight:700;letter-spacing:.18em;
+    border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:6px 14px;color:#e9e6da;
+  }
+  .stage-name{
+    position:relative;margin:34px 0 0;
+    font-size:clamp(44px,9.5vw,104px);font-weight:800;line-height:1.02;letter-spacing:-.015em;
+  }
+  .stage-name em{font-style:normal;color:var(--gold)}
+  .stage-role{
+    position:relative;margin-top:14px;
+    font-size:clamp(15px,2.6vw,22px);font-weight:800;letter-spacing:.42em;color:#cfd8ff;
+  }
+  .filmstrip{
+    position:relative;margin-top:38px;height:34px;border-radius:8px;
+    background:
+      repeating-linear-gradient(to left, transparent 0 26px, rgba(255,255,255,.85) 26px 40px);
+    background-color:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.16);
+    -webkit-mask:linear-gradient(#000,#000);
+    opacity:.9;
+  }
+  .stage-bottom{
+    position:relative;margin-top:26px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+    font-size:15.5px;font-weight:700;color:#d8d5c9;
+  }
+  .stage-bottom .sep{width:34px;height:2px;background:var(--gold);border-radius:2px;flex:none}
+
+  /* Marquee */
+  .marquee{background:var(--dark);color:#f4f4f2;margin-top:70px;overflow:hidden;padding:15px 0}
+  @media (prefers-color-scheme: dark){ .marquee{border-top:1px solid var(--dark-line);border-bottom:1px solid var(--dark-line)} }
+  .marquee-track{display:flex;gap:0;width:max-content;animation:scrollx 30s linear infinite}
+  .marquee:hover .marquee-track{animation-play-state:paused}
+  @keyframes scrollx{from{transform:translateX(0)}to{transform:translateX(50%)}}
+  .marquee span{
+    display:inline-flex;align-items:center;gap:26px;padding-inline-end:26px;
+    font-weight:800;font-size:16px;white-space:nowrap;letter-spacing:.02em;
+  }
+  .marquee .star{color:var(--gold);font-size:13px}
+
+  /* ---------- Sections ---------- */
+  section{padding:96px 0}
+  .sec-head{max-width:760px}
+  .sec-tag{
+    display:inline-flex;align-items:center;gap:10px;
+    font-size:14px;font-weight:800;color:var(--ink-2);
+  }
+  .sec-tag .num{
+    width:34px;height:34px;border-radius:50%;border:1.5px solid var(--ink);
+    display:inline-flex;align-items:center;justify-content:center;
+    font-size:13.5px;font-weight:800;
+  }
+  .sec-tag.on-dark{color:var(--on-dark-muted)}
+  .sec-tag.on-dark .num{border-color:rgba(255,255,255,.6);color:#fff}
+  .sec-head h2{
+    margin:16px 0 0;font-size:clamp(32px,5.4vw,56px);font-weight:900;line-height:1.35;
+  }
+  .sec-head p{margin:14px 0 0;font-size:17.5px;color:var(--muted);font-weight:600;max-width:600px}
+  .sec-head.on-dark p{color:var(--on-dark-muted)}
+
+  .soft{background:var(--bg-soft)}
+  .dark-sec{background:var(--dark);color:var(--on-dark)}
+  .dark-sec h2{color:#fff}
+
+  /* Audience cards */
+  .grid{display:grid;gap:16px;margin-top:48px}
+  .grid-3{grid-template-columns:repeat(3,1fr)}
+  .grid-2{grid-template-columns:repeat(2,1fr)}
+  @media (max-width:900px){ .grid-3{grid-template-columns:repeat(2,1fr)} }
+  @media (max-width:600px){ .grid-3,.grid-2{grid-template-columns:1fr} section{padding:70px 0} }
+  .card{
+    background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);
+    padding:28px 26px;
+  }
+  .soft .card{background:var(--bg)}
+  .card .dotline{display:flex;align-items:center;gap:10px;font-weight:900;font-size:19px}
+  .card .dotline i{width:9px;height:9px;border-radius:50%;background:var(--ink);flex:none}
+  .card p{margin:10px 0 0;color:var(--muted);font-weight:600;font-size:15.5px;line-height:1.85}
+
+  /* Work cards */
+  .work-card{padding:0;overflow:hidden;display:flex;flex-direction:column}
+  .work-visual{
+    height:158px;position:relative;display:flex;align-items:flex-end;padding:18px 20px;color:#fff;
+  }
+  .work-visual .wv-num{
+    position:absolute;top:14px;inset-inline-start:18px;
+    font-size:12.5px;font-weight:800;letter-spacing:.2em;opacity:.85;
+  }
+  .work-visual .wv-icon{
+    width:52px;height:52px;border-radius:16px;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.3);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .work-visual .wv-icon svg{width:26px;height:26px}
+  .work-visual .wv-badge{
+    position:absolute;top:14px;inset-inline-end:18px;
+    background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.25);
+    font-size:12px;font-weight:800;border-radius:999px;padding:5px 12px;
+  }
+  .wv-1{background:linear-gradient(130deg,#191410,#4a3512 55%,#8a6420)}
+  .wv-2{background:linear-gradient(130deg,#101623,#27355c 55%,#4a5f9e)}
+  .wv-3{background:linear-gradient(130deg,#0d1512,#1e3a2f 55%,#35634f)}
+  .wv-4{background:linear-gradient(130deg,#0a0a0c,#23232b 55%,#3d3d4d)}
+  .wv-5{background:linear-gradient(130deg,#171008,#453014 55%,#7a5a24)}
+  .wv-6{background:linear-gradient(130deg,#0c1220,#1d3263 55%,#2f56b8)}
+  .work-body{padding:24px 26px 28px;display:flex;flex-direction:column;gap:8px;flex:1}
+  .work-body h3{margin:0;font-size:20.5px;font-weight:900;line-height:1.5}
+  .work-body p{margin:0;color:var(--muted);font-weight:600;font-size:15.5px;line-height:1.9;flex:1}
+  .work-meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+  .work-meta span{
+    font-size:12.5px;font-weight:800;border:1.5px solid var(--line);border-radius:999px;
+    padding:5px 13px;color:var(--ink-2);
+  }
+
+  /* Services (dark) */
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px}
+  @media (max-width:900px){ .svc-grid{grid-template-columns:repeat(2,1fr)} }
+  @media (max-width:600px){ .svc-grid{grid-template-columns:1fr} }
+  .svc{
+    background:var(--dark-card);border:1px solid var(--dark-line);border-radius:var(--radius);
+    padding:28px 26px;
+  }
+  .svc .svc-top{display:flex;align-items:flex-start;justify-content:space-between}
+  .svc .svc-icon{
+    width:52px;height:52px;border-radius:15px;background:rgba(255,255,255,.07);
+    border:1px solid var(--dark-line);display:flex;align-items:center;justify-content:center;color:#fff;
+  }
+  .svc .svc-icon svg{width:25px;height:25px}
+  .svc .svc-num{font-size:13px;font-weight:800;color:var(--on-dark-muted)}
+  .svc h3{margin:18px 0 0;font-size:20px;font-weight:900;color:#fff;line-height:1.5}
+  .svc p{margin:8px 0 0;color:var(--on-dark-muted);font-weight:600;font-size:15.5px;line-height:1.9}
+  .svc.wide{grid-column:span 2}
+  @media (max-width:600px){ .svc.wide{grid-column:span 1} }
+  .dark-note{
+    margin-top:34px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+    color:var(--on-dark-muted);font-weight:700;font-size:16px;
+  }
+
+  /* Museum */
+  .museum-box{
+    margin-top:48px;background:var(--dark);color:var(--on-dark);border-radius:28px;
+    padding:clamp(30px,5vw,56px);position:relative;overflow:hidden;
+  }
+  .museum-box::before{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background:
+      radial-gradient(480px 260px at 92% 0%, rgba(30,94,255,.32), transparent 62%),
+      radial-gradient(420px 260px at 0% 110%, rgba(193,154,46,.28), transparent 60%);
+  }
+  .museum-inner{position:relative;display:grid;grid-template-columns:1.2fr .8fr;gap:36px;align-items:center}
+  @media (max-width:820px){ .museum-inner{grid-template-columns:1fr} }
+  .museum-inner h3{margin:0;font-size:clamp(26px,4vw,40px);font-weight:900;color:#fff;line-height:1.45}
+  .museum-inner p{color:var(--on-dark-muted);font-weight:600;font-size:16.5px;line-height:1.95;margin:14px 0 0}
+  .museum-counts{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .museum-counts .mc{
+    background:rgba(255,255,255,.06);border:1px solid var(--dark-line);border-radius:18px;
+    padding:20px;text-align:center;
+  }
+  .museum-counts .mc b{display:block;font-size:38px;font-weight:900;color:#fff;line-height:1.1}
+  .museum-counts .mc span{font-size:13.5px;color:var(--on-dark-muted);font-weight:700}
+  .museum-counts .mc.total{grid-column:span 2;background:rgba(193,154,46,.14);border-color:rgba(193,154,46,.4)}
+  .museum-counts .mc.total b{color:#e8c96a}
+
+  /* Apps */
+  .app-card{display:flex;flex-direction:column;gap:6px}
+  .app-head{display:flex;align-items:center;gap:16px}
+  .app-icon{
+    width:60px;height:60px;border-radius:18px;flex:none;color:#fff;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .app-icon svg{width:29px;height:29px}
+  .app-icon.chat{background:linear-gradient(135deg,#12805c,#25a06f)}
+  .app-icon.social{background:linear-gradient(135deg,#1e5eff,#5b8cff)}
+  .app-head h3{margin:0;font-size:21px;font-weight:900}
+  .app-head span{font-size:13px;color:var(--muted);font-weight:700;letter-spacing:.06em}
+  .app-card p{flex:1}
+  .app-card .btn{margin-top:16px;align-self:flex-start}
+  .apps-note{margin-top:22px;color:var(--muted);font-weight:600;font-size:15px}
+
+  /* About */
+  .about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:start;margin-top:48px}
+  @media (max-width:820px){ .about-grid{grid-template-columns:1fr} }
+  .about-grid p{margin:0 0 16px;font-size:17.5px;font-weight:600;color:var(--ink-2);line-height:2}
+  .about-grid p b{color:var(--ink)}
+  .about-facts{display:flex;flex-direction:column;gap:12px}
+  .fact{
+    display:flex;gap:14px;align-items:flex-start;background:var(--bg-card);
+    border:1px solid var(--line);border-radius:18px;padding:18px 20px;
+  }
+  .fact .f-icon{
+    width:44px;height:44px;border-radius:13px;background:var(--ink);color:var(--bg);flex:none;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .fact .f-icon svg{width:21px;height:21px}
+  .fact b{display:block;font-size:16.5px;font-weight:900;line-height:1.5}
+  .fact span{font-size:14.5px;color:var(--muted);font-weight:600;line-height:1.7}
+
+  /* FAQ */
+  .faq-list{margin-top:44px;display:flex;flex-direction:column;gap:12px;max-width:860px}
+  .faq{
+    background:var(--bg);border:1px solid var(--line);border-radius:18px;overflow:hidden;
+  }
+  .soft .faq{background:var(--bg)}
+  .faq button{
+    width:100%;background:none;border:none;cursor:pointer;font-family:inherit;
+    display:flex;align-items:center;gap:14px;text-align:start;
+    padding:20px 24px;min-height:64px;font-size:17.5px;font-weight:800;color:var(--ink);
+  }
+  .faq button .plus{
+    margin-inline-start:auto;flex:none;width:34px;height:34px;border-radius:50%;
+    border:1.5px solid var(--line);display:flex;align-items:center;justify-content:center;
+    transition:transform .25s ease;
+  }
+  .faq button .plus svg{width:15px;height:15px}
+  .faq.open button .plus{transform:rotate(45deg)}
+  .faq .faq-body{max-height:0;overflow:hidden;transition:max-height .3s ease}
+  .faq .faq-body p{margin:0;padding:0 24px 22px;color:var(--muted);font-weight:600;font-size:16px;line-height:1.95}
+  .faq .faq-body a{color:var(--blue);font-weight:800;text-decoration:none}
+  .faq .faq-body a:hover{text-decoration:underline}
+
+  /* Final CTA */
+  .final{
+    background:var(--dark);color:var(--on-dark);text-align:center;
+    padding:110px 0 120px;position:relative;overflow:hidden;
+  }
+  .final::before{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background:
+      radial-gradient(600px 320px at 50% -10%, rgba(30,94,255,.30), transparent 65%),
+      radial-gradient(500px 300px at 50% 115%, rgba(193,154,46,.26), transparent 62%);
+  }
+  .final .wrap{position:relative}
+  .final .en-line{font-size:13px;font-weight:800;letter-spacing:.4em;color:#9db4ff}
+  .final h2{
+    margin:20px auto 0;max-width:780px;color:#fff;
+    font-size:clamp(34px,6vw,62px);font-weight:900;line-height:1.4;
+  }
+  .final p{margin:18px auto 0;max-width:560px;color:var(--on-dark-muted);font-weight:600;font-size:17.5px;line-height:1.95}
+  .final .hero-ctas{margin-top:38px}
+
+  /* Footer */
+  footer{padding:44px 0 10px}
+  .foot{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+  .foot .logo b{font-size:17px}
+  .foot-links{display:flex;gap:6px;margin-inline-start:auto;flex-wrap:wrap}
+  .foot-links a{
+    text-decoration:none;font-weight:800;font-size:15px;color:var(--ink-2);
+    padding:10px 14px;min-height:44px;display:inline-flex;align-items:center;border-radius:999px;
+  }
+  .foot-links a:hover{background:var(--bg-soft);color:var(--ink)}
+  .foot-bottom{
+    margin-top:28px;padding-top:20px;border-top:1px solid var(--line);
+    display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:space-between;
+    color:var(--muted);font-size:14px;font-weight:600;
+  }
+
+  /* Sticky bottom CTA */
+  .sticky-bar{
+    position:fixed;bottom:14px;inset-inline:0;z-index:70;
+    display:flex;justify-content:center;padding:0 14px;pointer-events:none;
+  }
+  .sticky-inner{
+    pointer-events:auto;width:100%;max-width:760px;
+    background:var(--dark);color:#fff;border-radius:999px;
+    display:flex;align-items:center;gap:14px;
+    padding:9px 10px 9px 22px;
+    box-shadow:0 18px 44px -12px rgba(0,0,0,.5);
+  }
+  [dir="rtl"] .sticky-inner{padding:9px 22px 9px 10px}
+  .sticky-inner .s-text{display:flex;align-items:center;gap:10px;font-weight:800;font-size:15px;line-height:1.4;min-width:0}
+  .sticky-inner .s-text i{width:9px;height:9px;border-radius:50%;background:var(--gold);flex:none}
+  .sticky-inner .btn{margin-inline-start:auto;flex:none;min-height:46px;padding:9px 20px;font-size:14.5px}
+  @media (max-width:560px){
+    .sticky-inner .s-text{font-size:13.5px}
+    .sticky-inner .btn{padding:9px 16px}
+  }
+
+  /* Reveal */
+  .rv{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease}
+  .rv.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion: reduce){ .rv{opacity:1;transform:none} }
+</style>
+</head>
+<body>
+
+<!-- ===================== NAV ===================== -->
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top" aria-label="Karim Shehad AI Art">
+      <b class="en">Karim Shehad</b>
+      <span class="en">AI ART</span>
+    </a>
+    <nav class="nav-links" aria-label="التنقل الرئيسي">
+      <a href="#forwho">لمين؟</a>
+      <a href="#work">شغلي</a>
+      <a href="#services">هقدم لك إيه</a>
+      <a href="#museum">المتحف</a>
+      <a href="#apps">تطبيقاتي</a>
+      <a href="#about">عن كريم</a>
+    </nav>
+    <a class="btn btn-dark nav-cta" href="https://www.facebook.com/KarimShehadArt" target="_blank" rel="noopener">تابعني</a>
+    <button class="burger" id="burger" aria-label="فتح القائمة" aria-expanded="false" aria-controls="mobileMenu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#forwho">لمين؟</a>
+    <a href="#work">شغلي</a>
+    <a href="#services">هقدم لك إيه</a>
+    <a href="#museum">المتحف</a>
+    <a href="#apps">تطبيقاتي</a>
+    <a href="#about">عن كريم</a>
+    <a class="btn btn-dark" href="https://www.facebook.com/KarimShehadArt" target="_blank" rel="noopener">تابعني على فيسبوك</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ===================== HERO ===================== -->
+  <div class="hero">
+    <div class="wrap">
+      <span class="hero-badge"><span class="dot"></span> Karim Shehad AI Art &nbsp;·&nbsp; <span class="en">THE AI FILMMAKER</span></span>
+      <h1>من فكرة في خيالك…<br />إلى <span class="hl-gold">فيلم سينمائي</span> <span class="hl-blue">بالذكاء الاصطناعي</span></h1>
+      <p class="hero-sub">
+        أنا <b>كريم شهاد</b> — فنان وصانع أفلام بيحوّل الخيال لمشاهد سينمائية حقيقية:
+        أفلام، أنيميشن، وفيديوهات موسيقية بتقنيات الذكاء الاصطناعي، من أول لقطة لآخر مونتاج.
+      </p>
+      <div class="hero-ctas">
+        <a class="btn btn-dark" href="https://muse.ai/s/karim-shehad-presentation-xgxy74n0dfxsxgs/M2x7rrEAuMf45YK-jjAYTPdV6eJEarmDqG-B12IFFF8" target="_blank" rel="noopener">
+          <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 17 7 7M8 7h9v9"/></svg></span>
+          ادخل المتحف
+        </a>
+        <a class="btn btn-ghost" href="https://www.facebook.com/KarimShehadArt" target="_blank" rel="noopener">تابعني على فيسبوك</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><b class="en">182</b><span>عمل فني داخل المتحف ثلاثي الأبعاد</span></div>
+        <div class="stat"><b class="en">15,873</b><span>متابع على فيسبوك — حتى نوفمبر 2026</span></div>
+        <div class="stat"><b class="en">30</b><span>حلقة من سلسلة العصر الحجري قيد الإنتاج</span></div>
+      </div>
+    </div>
+
+    <!-- Typographic cinematic panel — no portrait, by design -->
+    <div class="stage" aria-hidden="true">
+      <div class="stage-card">
+        <div class="stage-top">
+          <span class="rec en"><i></i>REC</span>
+          <span class="tag en">AI CINEMA</span>
+        </div>
+        <div class="stage-name en">KARIM<br /><em>SHEHAD</em></div>
+        <div class="stage-role en">THE AI FILMMAKER</div>
+        <div class="filmstrip"></div>
+        <div class="stage-bottom">
+          <span class="sep"></span>
+          <span>رائد الإبداع بالذكاء الاصطناعي — A Pioneer in AI-Driven Creativity</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Marquee -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track" id="marqueeTrack">
+      <span>أفلام سينمائية بالذكاء الاصطناعي <i class="star">✦</i> فيديوهات موسيقية <i class="star">✦</i> أفلام تكريم <i class="star">✦</i> بورتريهات سينمائية <i class="star">✦</i> أنيميشن <i class="star">✦</i> عروض تقديمية تفاعلية <i class="star">✦</i> <span class="en">KARIM SHEHAD AI ART</span> <i class="star">✦</i></span>
+    </div>
+  </div>
+
+  <!-- ===================== 01 FOR WHO ===================== -->
+  <section class="soft" id="forwho">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="sec-tag"><span class="num en">01</span> الشغل ده لمين؟</span>
+        <h2>الصفحة دي موجهة<br />لمين؟</h2>
+        <p>الإجابة ببساطة: لأي حد عنده فكرة أو مناسبة أو براند، وعايز يشوفها بتتحول لمشهد سينمائي — مهما كان مجاله.</p>
+      </div>
+      <div class="grid grid-3">
+        <div class="card rv">
+          <div class="dotline"><i></i>صنّاع المحتوى</div>
+          <p>محتوى بصري مختلف يوقف السكرول: مشاهد سينمائية وفيديوهات قصيرة بشكل ما اتعملش قبل كده على منصاتك.</p>
+        </div>
+        <div class="card rv">
+          <div class="dotline"><i></i>الفنانون</div>
+          <p>أغنية أو عمل فني يستاهل يتشاف زي ما اتسمع: فيديو موسيقي أو مشهد بصري يعبّر عن روح شغلك.</p>
+        </div>
+        <div class="card rv">
+          <div class="dotline"><i></i>أصحاب البراندات</div>
+          <p>إعلان أو قصة براند بلغة السينما: لقطات فخمة ومشاهد مستحيلة بالتصوير التقليدي، من غير لوكيشن ولا طاقم تصوير.</p>
+        </div>
+        <div class="card rv">
+          <div class="dotline"><i></i>صنّاع الأفلام</div>
+          <p>رؤية إخراجية كاملة بالذكاء الاصطناعي: من بناء المشهد والإضاءة والمود، لحد المونتاج والإحساس النهائي.</p>
+        </div>
+        <div class="card rv">
+          <div class="dotline"><i></i>أصحاب المناسبات والتكريمات</div>
+          <p>فيلم تكريم يليق بصاحبه: سيرة شخصية أو فنية تتحول لفيلم قصير مؤثر يُعرض في المناسبات والمهرجانات.</p>
+        </div>
+        <div class="card rv">
+          <div class="dotline"><i></i>أي حد عنده خيال</div>
+          <p>عندك مشهد في دماغك ومش عارف توصّفه؟ ده بالظبط شغلي: آخد الفكرة من خيالك وأطلّعها على الشاشة.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 02 WORK ===================== -->
+  <section id="work">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="sec-tag"><span class="num en">02</span> أعمال مختارة</span>
+        <h2>شغلي</h2>
+        <p>مشاريع حقيقية اتنفذت واتعرضت — من أفلام تكريم في مهرجانات، لأفلام قصيرة وسلاسل قيد الإنتاج.</p>
+      </div>
+      <div class="grid grid-3">
+
+        <article class="card work-card rv">
+          <div class="work-visual wv-1">
+            <span class="wv-num en">PROJECT — 01</span>
+            <span class="wv-badge">مهرجان القاهرة السينمائي 47</span>
+            <span class="wv-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.5 13 17 22l-5-3-5 3 1.5-9"/></svg></span>
+          </div>
+          <div class="work-body">
+            <h3>فيلم تكريم فاروق فلوكس</h3>
+            <p>فيلم رحلة فنية للفنان فاروق فلوكس بمناسبة تكريمه بجائزة الهرم الذهبي لإنجاز العمر في مهرجان القاهرة السينمائي الدولي — الدورة 47، نوفمبر 2026.</p>
+            <div class="work-meta"><span>فيلم تكريم</span><span>2026</span></div>
+          </div>
+        </article>
+
+        <article class="card work-card rv">
+          <div class="work-visual wv-2">
+            <span class="wv-num en">PROJECT — 02</span>
+            <span class="wv-badge">90 ثانية</span>
+            <span class="wv-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V8"/><path d="M5 12H2a10 10 0 0 0 20 0h-3"/><circle cx="12" cy="5" r="3"/></svg></span>
+          </div>
+          <div class="work-body">
+            <h3>فيلم تكريم البابا شنودة الثالث</h3>
+            <p>فيلم تكريم مدته 90 ثانية بمناسبة الذكرى الـ55 لجلوس البابا شنودة الثالث على الكرسي البابوي: ستة وجوه… قديس واحد، في رحلة بصرية من الفجر لليل.</p>
+            <div class="work-meta"><span>فيلم تكريم</span><span>90 ثانية</span></div>
+          </div>
+        </article>
+
+        <article class="card work-card rv">
+          <div class="work-visual wv-3">
+            <span class="wv-num en">PROJECT — 03</span>
+            <span class="wv-badge">إعادة صناعة سينمائية</span>
+            <span class="wv-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V10l7-6 7 6v11"/><path d="M9 21v-6h6v6"/><path d="M12 4V2"/></svg></span>
+          </div>
+          <div class="work-body">
+            <h3>Cathedral Builder</h3>
+            <p>إعادة صناعة سينمائية لفيديو شهير: شاب يواجه السخرية وحيدًا، فيبني بإصراره جدارًا يرتفع حتى يصير كاتدرائية قوطية شاهقة فوق الجميع.</p>
+            <div class="work-meta"><span>فيلم قصير</span><span class="en">Remake</span></div>
+          </div>
+        </article>
+
+        <article class="card work-card rv">
+          <div class="work-visual wv-4">
+            <span class="wv-num en">PROJECT — 04</span>
+            <span class="wv-badge">90 ثانية</span>
+            <span class="wv-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 9h20M7 4v5M17 4v5"/><path d="m10 13 5 2.5-5 2.5z" fill="currentColor" stroke="none"/></svg></span>
+          </div>
+          <div class="work-body">
+            <h3 class="en" style="letter-spacing:.01em">THE AI FILMMAKER</h3>
+            <p>فيلمي السينمائي الخاص — 90 ثانية بلغة بصرية فاخرة: غروب، سينما، وحياة فنية، بيقدّم رؤيتي كمخرج أفلام بالذكاء الاصطناعي.</p>
+            <div class="work-meta"><span>فيلم شخصي</span><span>90 ثانية</span></div>
+          </div>
+        </article>
+
+        <article class="card work-card rv">
+          <div class="work-visual wv-5">
+            <span class="wv-num en">PROJECT — 05</span>
+            <span class="wv-badge">قيد الإنتاج</span>
+            <span class="wv-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 7v6c0 4.5 3.2 7.2 8 8 4.8-.8 8-3.5 8-8V7z"/><path d="M12 8v5M12 16.5v.01"/></svg></span>
+          </div>
+          <div class="work-body">
+            <h3>سلسلة العصر الحجري</h3>
+            <p>سلسلة أنيميشن بالذكاء الاصطناعي من 30 حلقة تدور في العصر الحجري — عالم كامل بشخصياته ومواقفه، قيد الإنتاج حاليًا.</p>
+            <div class="work-meta"><span>سلسلة</span><span>30 حلقة</span></div>
+          </div>
+        </article>
+
+        <article class="card work-card rv">
+          <div class="work-visual wv-6">
+            <span class="wv-num en">PROJECT — 06</span>
+            <span class="wv-badge">تفاعلي</span>
+            <span class="wv-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/><path d="m10 8 5 2.75L10 13.5z"/></svg></span>
+          </div>
+          <div class="work-body">
+            <h3>عروض تفاعلية وبورتريهات سينمائية</h3>
+            <p>عروض تقديمية تفاعلية بخرائط وحركة وموسيقى لشخصيات ومناسبات، وبورتريهات سينمائية بإضاءة درامية ولمسة فنية خاصة.</p>
+            <div class="work-meta"><span>عروض تقديمية</span><span>بورتريهات</span></div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 03 SERVICES (dark) ===================== -->
+  <section class="dark-sec" id="services">
+    <div class="wrap">
+      <div class="sec-head on-dark rv">
+        <span class="sec-tag on-dark"><span class="num en">03</span> الخدمات</span>
+        <h2>هقدم لك إيه؟</h2>
+        <p>كل خدمة بتتبني من الصفر حوالين فكرتك: كتابة المشهد، بناؤه بصريًا، إخراجه، ومونتاجه — لحد ما يطلع عمل جاهز للنشر أو العرض.</p>
+      </div>
+      <div class="svc-grid">
+        <div class="svc rv">
+          <div class="svc-top">
+            <span class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 9h20M7 4v5M17 4v5"/></svg></span>
+            <span class="svc-num en">01</span>
+          </div>
+          <h3>أفلام سينمائية بالذكاء الاصطناعي</h3>
+          <p>أفلام قصيرة كاملة بلغة السينما: قصة، إخراج، إضاءة ومود، ومونتاج — بمشاهد كانت مستحيلة أو مكلفة جدًا بالتصوير التقليدي.</p>
+        </div>
+        <div class="svc rv">
+          <div class="svc-top">
+            <span class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></span>
+            <span class="svc-num en">02</span>
+          </div>
+          <h3>فيديوهات موسيقية</h3>
+          <p>كليبات ومشاهد بصرية للأغاني والترانيم: صور متحركة تعيش جوه الموسيقى وتوصل إحساسها من أول ثانية.</p>
+        </div>
+        <div class="svc rv">
+          <div class="svc-top">
+            <span class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/></svg></span>
+            <span class="svc-num en">03</span>
+          </div>
+          <h3>بورتريهات سينمائية</h3>
+          <p>صور شخصية بروح الأفلام: إضاءة درامية، خلفيات مرسومة بعناية، ولمسة فنية تخلي البورتريه قطعة فنية مش مجرد صورة.</p>
+        </div>
+        <div class="svc rv">
+          <div class="svc-top">
+            <span class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.5 13 17 22l-5-3-5 3 1.5-9"/></svg></span>
+            <span class="svc-num en">04</span>
+          </div>
+          <h3>أفلام تكريم</h3>
+          <p>سيرة شخصية أو فنية تتحول لفيلم قصير يليق بصاحبها — للمناسبات والمهرجانات والاحتفالات الخاصة.</p>
+        </div>
+        <div class="svc wide rv">
+          <div class="svc-top">
+            <span class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/><path d="m10 8 5 2.75L10 13.5z"/></svg></span>
+            <span class="svc-num en">05</span>
+          </div>
+          <h3>عروض تقديمية تفاعلية</h3>
+          <p>بريزنتيشن حية مش شرائح جامدة: خرائط متحركة، انتقالات سينمائية، موسيقى، وسرد بصري يخلي الجمهور يعيش الرحلة — مناسبة للشخصيات العامة والمناسبات والمؤسسات.</p>
+        </div>
+      </div>
+      <div class="dark-note rv">
+        <span>عندك فكرة ومش لاقيها في القايمة؟</span>
+        <a class="btn btn-light" href="https://www.facebook.com/KarimShehadArt" target="_blank" rel="noopener">كلّمني على فيسبوك</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 04 MUSEUM ===================== -->
+  <section id="museum">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="sec-tag"><span class="num en">04</span> المتحف</span>
+        <h2>ادخل المتحف…<br />واتمشّى جوه شغلي</h2>
+        <p>كل أعمالي متجمعة في متحف ثلاثي الأبعاد تقدر تتمشى فيه بنفسك: قاعات وصور وفيديوهات، تجربة كاملة من متصفحك.</p>
+      </div>
+      <div class="museum-box rv">
+        <div class="museum-inner">
+          <div>
+            <h3>182 عملًا في مكان واحد</h3>
+            <p>صور سينمائية، بورتريهات، ومقاطع فيديو من مشاريعي المختلفة — مرتبة في قاعات متحف افتراضي بتتحرك فيه بحرية، كأنك في معرض حقيقي.</p>
+            <div class="hero-ctas" style="justify-content:flex-start;margin-top:28px">
+              <a class="btn btn-light" href="https://muse.ai/s/karim-shehad-presentation-xgxy74n0dfxsxgs/M2x7rrEAuMf45YK-jjAYTPdV6eJEarmDqG-B12IFFF8" target="_blank" rel="noopener">
+                <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 17 7 7M8 7h9v9"/></svg></span>
+                زيارة المتحف
+              </a>
+              <a class="btn btn-outline-light" href="https://www.instagram.com/karimshehadart" target="_blank" rel="noopener">شوف الجديد على إنستجرام</a>
+            </div>
+          </div>
+          <div class="museum-counts">
+            <div class="mc total"><b class="en">182</b><span>إجمالي الأعمال</span></div>
+            <div class="mc"><b class="en">167</b><span>صورة وعمل بصري</span></div>
+            <div class="mc"><b class="en">15</b><span>فيديو</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 05 APPS ===================== -->
+  <section class="soft" id="apps">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="sec-tag"><span class="num en">05</span> تطبيقاتي</span>
+        <h2>تطبيقاتي</h2>
+        <p>بجانب الأفلام، بنيت تطبيقين مجانيين للأندرويد — حساب واحد بيفتح الاتنين.</p>
+      </div>
+      <div class="grid grid-2">
+        <div class="card app-card rv">
+          <div class="app-head">
+            <span class="app-icon chat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.5 0-3-.4-4.2-1.1L3 20l1.1-5.3A8.5 8.5 0 1 1 21 11.5z"/></svg></span>
+            <div>
+              <h3 class="en">Shehad Chat</h3>
+              <span class="en">ANDROID · FREE</span>
+            </div>
+          </div>
+          <p>تطبيق محادثات كامل: رسائل فورية، مكالمات صوتية ومرئية، قصص، قنوات ومجتمعات، وملف أعمال يعرض خدماتك وطلباتك.</p>
+          <a class="btn btn-dark" href="https://github.com/Karimkshehad/shehad-apps/releases/download/v1.0/shehad-chat.apk" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M6.5 10.5 12 16l5.5-5.5M4 20h16"/></svg>
+            حمّل التطبيق
+          </a>
+        </div>
+        <div class="card app-card rv">
+          <div class="app-head">
+            <span class="app-icon social"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.2 3.4-5 6.5-5s5.7 1.8 6.5 5"/><path d="M16 5.5a3.5 3.5 0 0 1 0 6.5M18.5 15.4c1.6.7 2.7 2 3 4.1"/></svg></span>
+            <div>
+              <h3 class="en">Shehad Social</h3>
+              <span class="en">ANDROID · FREE</span>
+            </div>
+          </div>
+          <p>منصة تواصل اجتماعي: منشورات وقصص، إعجاب وتعليقات ومشاركات، مجموعات وصفحات وطلبات صداقة — بنفس حسابك في شات شهاد.</p>
+          <a class="btn btn-dark" href="https://github.com/Karimkshehad/shehad-apps/releases/download/v1.0/shehad-social.apk" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M6.5 10.5 12 16l5.5-5.5M4 20h16"/></svg>
+            حمّل التطبيق
+          </a>
+        </div>
+      </div>
+      <p class="apps-note rv">التطبيقان مجانيان تمامًا، ويعملان على أندرويد — سجّل مرة واحدة واستخدم نفس الحساب في الاتنين.</p>
+    </div>
+  </section>
+
+  <!-- ===================== 06 ABOUT ===================== -->
+  <section id="about">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="sec-tag"><span class="num en">06</span> عن كريم</span>
+        <h2>عن كريم</h2>
+      </div>
+      <div class="about-grid">
+        <div class="rv">
+          <p><b>كريم كمال شهاد — Karim Shehad</b>، فنان وصانع أفلام مصري، من روّاد دمج الذكاء الاصطناعي في الإنتاج السينمائي: أفلام سينمائية، أنيميشن، وفيديوهات موسيقية بتوقيع بصري واحد — <b class="en">THE AI FILMMAKER</b>.</p>
+          <p>شغله بيتحرك بين الفخامة والدراما والخيال: أفلام تكريم اتعرضت في مهرجانات ومناسبات كبرى، وإعادة صناعة سينمائية لمشاهد شهيرة، وسلاسل أنيميشن أصلية — وكل عمل بيبدأ من نفس النقطة: <b>مشهد في الخيال يستاهل يبقى حقيقة على الشاشة.</b></p>
+          <p>بينشر شغله تحت اسم <b class="en">Karim Shehad AI Art</b> على فيسبوك وإنستجرام، وبيجمع أعماله في متحف ثلاثي الأبعاد مفتوح للزيارة في أي وقت.</p>
+          <div class="hero-ctas" style="justify-content:flex-start;margin-top:26px">
+            <a class="btn btn-dark" href="https://www.facebook.com/KarimShehadArt" target="_blank" rel="noopener">فيسبوك</a>
+            <a class="btn btn-ghost" href="https://www.instagram.com/karimshehadart" target="_blank" rel="noopener">إنستجرام</a>
+          </div>
+        </div>
+        <div class="about-facts rv">
+          <div class="fact">
+            <span class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 9h20M7 4v5M17 4v5"/></svg></span>
+            <div><b>التخصص</b><span>صناعة أفلام بالذكاء الاصطناعي — إخراج وبناء مشاهد ومونتاج</span></div>
+          </div>
+          <div class="fact">
+            <span class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V8l7-5 7 5v13"/><path d="M9 21v-6h6v6"/></svg></span>
+            <div><b>المتحف</b><span>182 عملًا (167 صورة + 15 فيديو) في متحف ثلاثي الأبعاد قابل للتجول</span></div>
+          </div>
+          <div class="fact">
+            <span class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+            <div><b>الجمهور</b><span>15,873 متابعًا على فيسبوك — حتى نوفمبر 2026</span></div>
+          </div>
+          <div class="fact">
+            <span class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2.5"/><path d="M12 18.5v.01"/></svg></span>
+            <div><b>التطبيقات</b><span>Shehad Chat و Shehad Social — مجانًا على أندرويد بحساب واحد</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 07 FAQ ===================== -->
+  <section class="soft" id="faq" style="padding-top:80px">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="sec-tag"><span class="num en">07</span> أسئلة شائعة</span>
+        <h2>أسئلة شائعة</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq rv">
+          <button type="button" aria-expanded="false">
+            إيه اللي بيعمله كريم بالظبط؟
+            <span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+          </button>
+          <div class="faq-body"><p>كريم صانع أفلام بالذكاء الاصطناعي: بيبني أفلامًا قصيرة ومشاهد سينمائية وفيديوهات موسيقية وأنيميشن وبورتريهات بتقنيات الذكاء الاصطناعي — من الفكرة والكتابة البصرية لحد الإخراج والمونتاج النهائي.</p></div>
+        </div>
+        <div class="faq rv">
+          <button type="button" aria-expanded="false">
+            أقدر أطلب فيلم أو فيديو ليا؟
+            <span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+          </button>
+          <div class="faq-body"><p>أيوه — تقدر تتواصل مع كريم مباشرة عبر <a href="https://www.facebook.com/KarimShehadArt" target="_blank" rel="noopener">فيسبوك</a> أو <a href="https://www.instagram.com/karimshehadart" target="_blank" rel="noopener">إنستجرام</a> وتشرح فكرتك: فيلم قصير، فيديو موسيقي، فيلم تكريم، أو عرض تفاعلي، وهو هيرد عليك بالتفاصيل.</p></div>
+        </div>
+        <div class="faq rv">
+          <button type="button" aria-expanded="false">
+            فين أقدر أشوف شغله كامل؟
+            <span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+          </button>
+          <div class="faq-body"><p>في <a href="https://muse.ai/s/karim-shehad-presentation-xgxy74n0dfxsxgs/M2x7rrEAuMf45YK-jjAYTPdV6eJEarmDqG-B12IFFF8" target="_blank" rel="noopener">المتحف ثلاثي الأبعاد</a> هتلاقي 182 عملًا (167 صورة و15 فيديو) تقدر تتمشى بينهم، والجديد بينزل أول بأول على فيسبوك وإنستجرام.</p></div>
+        </div>
+        <div class="faq rv">
+          <button type="button" aria-expanded="false">
+            التطبيقات مجانية فعلًا؟
+            <span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+          </button>
+          <div class="faq-body"><p>أيوه، Shehad Chat و Shehad Social مجانيان تمامًا على أندرويد. حمّل أي واحد فيهم من قسم «تطبيقاتي» فوق، سجّل حسابك مرة واحدة، وهتقدر تستخدمه في التطبيقين.</p></div>
+        </div>
+        <div class="faq rv">
+          <button type="button" aria-expanded="false">
+            هل كريم بيقدّم كورسات تعليمية؟
+            <span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+          </button>
+          <div class="faq-body"><p>لا — كريم صانع أفلام وفنان، مش أكاديمية. الصفحة دي لعرض شغله وخدماته في صناعة الأفلام والمحتوى البصري بالذكاء الاصطناعي، ولطلب الأعمال الخاصة بنتواصل عبر فيسبوك وإنستجرام.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FINAL CTA ===================== -->
+  <div class="final">
+    <div class="wrap">
+      <div class="en-line en">KARIM SHEHAD AI ART</div>
+      <h2>خلّي خيالك يتحوّل<br />لمشهد سينمائي</h2>
+      <p>فكرة واحدة ممكن تبقى فيلم. ابدأ بجولة في المتحف، ولو عندك مشهد في بالك — كلّمني.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-light" href="https://muse.ai/s/karim-shehad-presentation-xgxy74n0dfxsxgs/M2x7rrEAuMf45YK-jjAYTPdV6eJEarmDqG-B12IFFF8" target="_blank" rel="noopener">
+          <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 17 7 7M8 7h9v9"/></svg></span>
+          ادخل المتحف
+        </a>
+        <a class="btn btn-outline-light" href="https://www.facebook.com/KarimShehadArt" target="_blank" rel="noopener">تابعني على فيسبوك</a>
+        <a class="btn btn-outline-light" href="https://www.instagram.com/karimshehadart" target="_blank" rel="noopener">إنستجرام</a>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <a class="logo" href="#top" aria-label="Karim Shehad AI Art">
+        <b class="en">Karim Shehad</b>
+        <span class="en">AI ART</span>
+      </a>
+      <nav class="foot-links" aria-label="روابط التواصل">
+        <a href="https://www.facebook.com/KarimShehadArt" target="_blank" rel="noopener">فيسبوك</a>
+        <a href="https://www.instagram.com/karimshehadart" target="_blank" rel="noopener">إنستجرام</a>
+        <a href="https://muse.ai/s/karim-shehad-presentation-xgxy74n0dfxsxgs/M2x7rrEAuMf45YK-jjAYTPdV6eJEarmDqG-B12IFFF8" target="_blank" rel="noopener">المتحف</a>
+      </nav>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Karim Shehad AI Art — كريم شهاد | <span class="en">THE AI FILMMAKER</span></span>
+      <span>رائد الإبداع بالذكاء الاصطناعي</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===================== STICKY CTA ===================== -->
+<div class="sticky-bar">
+  <div class="sticky-inner">
+    <span class="s-text"><i></i>شوف 182 عملًا في المتحف ثلاثي الأبعاد</span>
+    <a class="btn btn-light" href="https://muse.ai/s/karim-shehad-presentation-xgxy74n0dfxsxgs/M2x7rrEAuMf45YK-jjAYTPdV6eJEarmDqG-B12IFFF8" target="_blank" rel="noopener">ادخل المتحف</a>
+  </div>
+</div>
+
+<script>
+  // Mobile menu
+  var burger = document.getElementById('burger');
+  var menu = document.getElementById('mobileMenu');
+  burger.addEventListener('click', function () {
+    var open = menu.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  menu.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      menu.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Marquee: duplicate content for a seamless loop
+  var track = document.getElementById('marqueeTrack');
+  track.innerHTML += track.innerHTML;
+
+  // FAQ accordion
+  document.querySelectorAll('.faq').forEach(function (faq) {
+    var btn = faq.querySelector('button');
+    var body = faq.querySelector('.faq-body');
+    btn.addEventListener('click', function () {
+      var isOpen = faq.classList.contains('open');
+      document.querySelectorAll('.faq.open').forEach(function (other) {
+        other.classList.remove('open');
+        other.querySelector('.faq-body').style.maxHeight = null;
+        other.querySelector('button').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        faq.classList.add('open');
+        body.style.maxHeight = body.scrollHeight + 'px';
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  // Scroll reveal
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduceMotion && 'IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.rv').forEach(function (el) { io.observe(el); });
+  } else {
+    document.querySelectorAll('.rv').forEach(function (el) { el.classList.add('in'); });
+  }
+</script>
+</body>
+</html>
